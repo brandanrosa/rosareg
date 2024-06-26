@@ -34,4 +34,6 @@ myLAreg <- function(obj) { # obj = lm() object
   # ssq & s
   ssq <- RSS / (n - (k + 1))
   s <- sqrt(ssq)
+
+  list(Summary=sm, n=n, k=k, beta.estimates=betahat, RSS=RSS, s.squared=ssq, s=s)
 }
