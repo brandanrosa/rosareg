@@ -10,7 +10,7 @@ myLAreg(obj)
 \item{obj}{an `lm()` object}
 }
 \value{
-a named list with the following: model summary, n (num observations), k (num beta parameters), beta estimates, RSS, s-squared, s, the Design & Response Matrices, and the data frame.
+a named list with the following: model summary, n (num observations), k (num beta parameters), beta estimates, RSS, s-squared, s, and the Design & Response Matrices.
 }
 \description{
 A function which takes an `lm()` object and produces a list of fun and interesting values which Regression covets
