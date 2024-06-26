@@ -1,3 +1,15 @@
+#' myFnest
+#'
+#' A function which tests the comparison of nested models (Hierarchical F-Test)
+#'
+#' @param objc an `lm()` object for the complete model
+#' @param objr an `lm()` object for the reduced model
+#' @param alpha the alpha level
+#'
+#' @return a list containing the nested F-statistic, the F_alpha value, and result of hyp test
+#' @export
+#'
+#' @examples \dontrun{myFnest(ylm, zlm, alpha=0.05)}
 myFnest <- function(objc, objr, alpha = 0.05) {
 
   # Model Data
