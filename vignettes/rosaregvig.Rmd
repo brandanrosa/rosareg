@@ -49,9 +49,3 @@ zlm <- lm(QUALITY ~ TEMP + PRESSURE + TEMP:PRESSURE, data = prod)
 
 myFnest(objc = ylm, objr = zlm, alpha = 0.05)
 ```
-
-
-
-
-
-
