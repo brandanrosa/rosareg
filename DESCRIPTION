@@ -11,3 +11,9 @@ LazyData: true
 RoxygenNote: 7.3.1
 URL: https://github.com/brandanrosa/rosareg
 BugReports: https://github.com/brandanrosa/rosareg/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports:
+  readxl

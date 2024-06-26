@@ -1,0 +1,57 @@
+---
+title: "The rosareg package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{The rosareg package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(rosareg)
+```
+
+# Introduction
+
+This package contains functions I find useful for MATH5773 Regression Analysis at OU. The results of these functions are used repeatedly in the course, and are vital for valid regression analyses.
+
+The `myLAreg()` function produces a named list with the following: model summary, n (number of observations), k (number of beta parameters), beta estimates, RSS, s-squared, s, the Design & Response Matrices, and the data frame.
+
+The `myFnest()` function produces a list containing the nested F-statistic, the F_alpha value, and result of the hypothesis test. This is also known as the "Hierarchical F-Test".
+
+Finally, the function, `myMSdata()`, is more of a shortcut for calling in the data sets we utilize in the course. NOTE: this only works on my computer :) 
+
+We will now look at examples of each function using the `PRODQUAL` data set.
+
+```{r}
+prod <- myMSdata("PRODQUAL")
+```
+
+# Example `myLAreg()`
+
+```{r}
+ylm <- lm(QUALITY ~ TEMP + PRESSURE + TEMP:PRESSURE + I(TEMP^2) + I(PRESSURE^2), data = prod)
+
+myLAreg(ylm)
+```
+
+# Example `myFnest()`
+
+```{r}
+zlm <- lm(QUALITY ~ TEMP + PRESSURE + TEMP:PRESSURE, data = prod)
+
+myFnest(objc = ylm, objr = zlm, alpha = 0.05)
+```
+
+
+
+
+
+

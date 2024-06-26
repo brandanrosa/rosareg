@@ -40,5 +40,5 @@ myFnest <- function(objc, objr, alpha = 0.05) {
   test <- ifelse(F_nest > F_alpha, "REJECT H0", "FAIL TO REJECT H0")
 
   # List
-  list(F_nest=F_nest, F_alpha=F_alpha, Test=test, n=n, k=k, g=g, RSSc=RSSc, RSSr=RSSr, ssqc=ssqc)
+  list(F_nest=F_nest, F_alpha=F_alpha, Test=test)
 }

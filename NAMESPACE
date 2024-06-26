@@ -2,3 +2,5 @@
 
 export(myFnest)
 export(myLAreg)
+export(myMSdata)
+importFrom(readxl,read_xls)

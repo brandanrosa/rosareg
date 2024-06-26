@@ -4,7 +4,7 @@
 #'
 #' @param obj an `lm()` object
 #'
-#' @return a named list with the following: model summary, n (num observations), k (num beta parameters), beta estimates, RSS, s-squared, s, and the Design & Response Matrices
+#' @return a named list with the following: model summary, n (num observations), k (num beta parameters), beta estimates, RSS, s-squared, s, the Design & Response Matrices, and the data frame.
 #' @export
 #'
 #' @examples \dontrun{myLAreg(ylm)}
@@ -35,5 +35,12 @@ myLAreg <- function(obj) { # obj = lm() object
   ssq <- RSS / (n - (k + 1))
   s <- sqrt(ssq)
 
-  list(Summary=sm, n=n, k=k, beta.estimates=betahat, RSS=RSS, s.squared=ssq, s=s)
+  list(Summary=sm,
+       n=n,
+       k=k,
+       beta.estimates=betahat,
+       RSS=RSS,
+       s.squared=ssq,
+       s=s,
+       dat=dat)
 }
