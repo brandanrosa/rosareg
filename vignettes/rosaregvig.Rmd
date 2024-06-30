@@ -24,7 +24,7 @@ This package contains functions I find useful for MATH5773 Regression Analysis a
 
 The `myLAreg()` function produces a named list with the following: model summary, n (number of observations), k (number of beta parameters), beta estimates, RSS, s-squared, s, the Design & Response Matrices, and the data frame.
 
-The `myFnest()` function produces a list containing the nested F-statistic, the F_alpha value, and result of the hypothesis test. This is also known as the "Hierarchical F-Test".
+The  function produces a list containing the nested F-statistic, the F_alpha value, and result of the hypothesis test. This is also known as the "Hierarchical F-Test".
 
 Finally, the function, `myMSdata()`, is more of a shortcut for calling in the data sets we utilize in the course. NOTE: this only works on my computer :) 
 
@@ -42,10 +42,4 @@ ylm <- lm(QUALITY ~ TEMP + PRESSURE + TEMP:PRESSURE + I(TEMP^2) + I(PRESSURE^2),
 myLAreg(ylm)
 ```
 
-# Example `myFnest()`
 
-```{r}
-zlm <- lm(QUALITY ~ TEMP + PRESSURE + TEMP:PRESSURE, data = prod)
-
-myFnest(objc = ylm, objr = zlm, alpha = 0.05)
-```
